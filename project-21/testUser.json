@@ -1,0 +1,147 @@
+{
+    "user": {
+      "id": 12345,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "parent": {
+        "id": 54321,
+        "name": "Jane Doe",
+        "email": "jane.doe@example.com"
+      },
+      "children": [
+        {
+          "id": 67890,
+          "name": "Alice Doe",
+          "email": "alice.doe@example.com"
+        },
+        {
+          "id": 13579,
+          "name": "Bob Doe",
+          "email": "bob.doe@example.com"
+        }
+      ],
+      "daysOfWeek": {
+        "Monday": {
+          "tasksToDo": 2,
+          "tasksCompleted": 1,
+          "isCompleted": false,
+          "tasks": [
+            {
+              "date": "2023-09-18",
+              "time": "08:00 AM",
+              "text": "Task 1",
+              "taskDuration": 3600, // 1 hour in seconds
+              "isCompleted": false,
+              "image": "task1_image.jpg"
+            },
+            {
+              "date": "2023-09-18",
+              "time": "02:30 PM",
+              "text": "Task 2",
+              "taskDuration": 2700, // 45 minutes in seconds
+              "isCompleted": true,
+              "image": "task2_image.jpg"
+            }
+          ]
+        },
+        "Tuesday": {
+          "tasksToDo": 2,
+          "tasksCompleted": 0,
+          "isCompleted": false,
+          "tasks": [
+            {
+              "date": "2023-09-19",
+              "time": "09:30 AM",
+              "text": "Task 3",
+              "taskDuration": 1800, // 30 minutes in seconds
+              "isCompleted": false,
+              "image": "task3_image.jpg"
+            },
+            {
+              "date": "2023-09-19",
+              "time": "04:00 PM",
+              "text": "Task 4",
+              "taskDuration": 5400, // 1.5 hours in seconds
+              "isCompleted": false,
+              "image": "task4_image.jpg"
+            }
+          ]
+        },
+        "Wednesday": {
+          "tasksToDo": 1,
+          "tasksCompleted": 1,
+          "isCompleted": true,
+          "tasks": [
+            {
+              "date": "2023-09-20",
+              "time": "10:00 AM",
+              "text": "Task 5",
+              "taskDuration": 2700, // 45 minutes in seconds
+              "isCompleted": true,
+              "image": "task5_image.jpg"
+            }
+          ]
+        },
+        "Thursday": {
+          "tasksToDo": 2,
+          "tasksCompleted": 1,
+          "isCompleted": false,
+          "tasks": [
+            {
+              "date": "2023-09-21",
+              "time": "11:30 AM",
+              "text": "Task 6",
+              "taskDuration": 3600, // 1 hour in seconds
+              "isCompleted": false,
+              "image": "task6_image.jpg"
+            },
+            {
+              "date": "2023-09-21",
+              "time": "03:45 PM",
+              "text": "Task 7",
+              "taskDuration": 7200, // 2 hours in seconds
+              "isCompleted": true,
+              "image": "task7_image.jpg"
+            }
+          ]
+        },
+        "Friday": {
+          "tasksToDo": 1,
+          "tasksCompleted": 0,
+          "isCompleted": false,
+          "tasks": [
+            {
+              "date": "2023-09-22",
+              "time": "01:15 PM",
+              "text": "Task 8",
+              "taskDuration": 2700, // 45 minutes in seconds
+              "isCompleted": false,
+              "image": "task8_image.jpg"
+            }
+          ]
+        },
+        "Saturday": {
+          "tasksToDo": 0,
+          "tasksCompleted": 0,
+          "isCompleted": false,
+          "tasks": []
+        },
+        "Sunday": {
+          "tasksToDo": 1,
+          "tasksCompleted": 1,
+          "isCompleted": true,
+          "tasks": [
+            {
+              "date": "2023-09-24",
+              "time": "06:30 PM",
+              "text": "Task 9",
+              "taskDuration": 5400, // 1.5 hours in seconds
+              "isCompleted": true,
+              "image": "task9_image.jpg"
+            }
+          ]
+        }
+      }
+    }
+  }
+  
