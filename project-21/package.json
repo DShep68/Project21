@@ -14,11 +14,14 @@
   "devDependencies": {
     "@babel/core": "^7.22.19",
     "@babel/preset-env": "^7.22.15",
+    "@parcel/transformer-less": "^2.9.3",
     "eslint": "^8.49.0",
+    "json-loader": "^0.5.7",
     "parcel": "^2.9.3",
     "process": "^0.11.10"
   },
   "dependencies": {
+    "immer": "^10.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
