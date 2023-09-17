@@ -1,18 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { createRoot } from 'react-dom/client';
-import AppTwo from './components/AppTwo';
-import Weekday from './components/Weekday';
-import FirstComponent from './components/Link';
+import Pages from './pages/Pages';
 import testUser from './data/testUser.json';
+
+export default MyContext = React.createContext();
+
+export function MyProvider({ children }) {
+    let [userData, setUserData] = useState(testUser.user)
+  
+    return (
+      <MyContext.Provider value={{userData, setUserData}}>
+        {children} {/* Render the wrapped content */}
+      </MyContext.Provider>
+    )
+  }
 
 
 
 const App = () => {
-    let [userData, setUserData] = useState(testUser.user)
+    
     return (
         <React.StrictMode>
-            <AppTwo />
-            <Weekday user={userData} setUser={setUserData}/>
+            <MyProvider>
+                {/* <Weekday user={userData} setUser={setUserData}/> */}
+                <Pages />
+            </MyProvider>
         </React.StrictMode>
     )
 }

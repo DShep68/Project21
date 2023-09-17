@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import MyContext from '../index';
 import { produce } from 'immer';
 
 
 
-export default function Weekday({user, setUser}) {
-    console.log(user)
+export default function Weekday({weekday}) {
+    const { userData, setUserData } = useContext(MyContext);
 
-    let weekDay = "Sunday"
-    let tasks = user.daysOfWeek[weekDay].tasks
+    let tasks = userData.daysOfWeek[weekday].tasks
     let fakeTask = {
         "id": Math.floor(Math.random() * 1000) + 10,
         "date": "2023-09-18",
@@ -37,17 +37,20 @@ export default function Weekday({user, setUser}) {
             "image": "task1_image.jpg"
         }
     ]
-        
-    console.log(user)
 
 
     function completeTask(taskId, taskCompleted) {
-        setUser(prevUser => {
-          return produce(prevUser, draft => {
-            const task = draft.daysOfWeek[weekDay].tasks.find(task => task.id === taskId)
+        setUserData(prevUserData => {
+          return produce(prevUserData, draft => {
+            const task = draft.daysOfWeek[weekday].tasks.find(task => task.id === taskId)
             if (task) {
               task.isCompleted = !taskCompleted
               task.isCompleted ? console.log(`${task.text} is Completed`) : console.log(`${task.text} is incomplete`)
+              if (task.isCompleted) {
+                draft.daysOfWeek[weekday].tasksCompleted = draft.daysOfWeek[weekday].tasksCompleted + 1
+              } else {
+                draft.daysOfWeek[weekday].tasksCompleted = draft.daysOfWeek[weekday].tasksCompleted - 1
+              }
             }
           })
         })
@@ -68,24 +71,30 @@ export default function Weekday({user, setUser}) {
     }
 
     function addTask(taskOrRoutine) {
-        setUser(prevUser => {
-            return produce(prevUser, draft => {
+        setUserData(prevUserData => {
+            return produce(prevUserData, draft => { 
                 if (Array.isArray(taskOrRoutine)) {
-                    draft.daysOfWeek[weekDay].tasks.push(...taskOrRoutine)
+                    let amountOfTasks = 0
+                    amountOfTasks = taskOrRoutine.length
+                    draft.daysOfWeek[weekday].tasks.push(...taskOrRoutine)
+                    draft.daysOfWeek[weekday].tasksToDo = draft.daysOfWeek[weekday].tasksToDo + amountOfTasks
                 } else {
-                    draft.daysOfWeek[weekDay].tasks.push(taskOrRoutine)
+                    draft.daysOfWeek[weekday].tasks.push(taskOrRoutine)
+                    draft.daysOfWeek[weekday].tasksToDo = draft.daysOfWeek[weekday].tasksToDo + 1
                 }
             })
         })
     }
-    
 
     return (
-        <div className="WeekdayTasks">
-            <div className="WeekdayTasks-addTask" onClick={() => addTask(fakeTask)}>
-                Add a task
+        <>
+            <div className="Weekday-title">{weekday} {userData.daysOfWeek[weekday].tasksCompleted} / {userData.daysOfWeek[weekday].tasksToDo}</div>
+            <div className="WeekdayTasks">
+                <div className="WeekdayTasks-addTask" onClick={() => addTask(fakeRoutine)}>
+                    Add a task
+                </div>
+                {weekdayTasks()}
             </div>
-            {weekdayTasks()}
-        </div>
+        </>
     )
 }
