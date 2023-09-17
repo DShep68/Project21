@@ -1,5 +1,8 @@
+html {
+    font-family: 'Poppins', serif;
+}
 body {
-    background-color: #dcd5d5;
+    background-color: #E6E0E9;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -8,25 +11,56 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    &-addTask {
+        border: 2px solid #141218;
+        padding: 28px;
+        color: #141218;
+        &:hover {
+            cursor: pointer;
+        }
+        &:before {
+            display: block;
+            content: "+";
+            width: 20px;
+            margin-right: 15px;
+        }
+    }
 }
-.WeekdayTask {
+
+.WeekdayTask, .WeekdayTasks-addTask {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 8px;
-    padding: 10px;
+    align-items: center;
+    border-radius: 12px;
+    
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    &-content {
-        font-size: 20px;;
+}
+.WeekdayTask-content, .WeekdayTasks-addTask {
+    font-size: 20px;
+    font-weight: 500;
+    color: #141218;
+}
+.WeekdayTask {
+    padding: 30px;
+    justify-content: space-between;
+    background-color: #CAC4D0;
+    &:hover {
+        cursor: pointer;
+        .WeekdayTask-isCompleted {
+            background-color: #938F99;
+        }
+    }
+    &:active{
+        background-color: #CAC4D0;
+        transform: translateY(2px);
     }
     &-isCompleted {
-        width: 15px;
-        height: 15px;
-        border: 2px solid lightblue;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #938F99;
         border-radius: 100%;
         &.completed {
-            background-color: lightblue;
+            background-color: #938F99;
         }
     }
 }
