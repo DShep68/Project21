@@ -33,7 +33,7 @@
             "text": "Task 1",
             "taskDuration": 3600, // 1 hour in seconds
             "isCompleted": false,
-            "image": "task1_image.jpg"
+            "image": "brushing.jpg"
           },
           {
             "id": 2,
@@ -42,7 +42,7 @@
             "text": "Task 2",
             "taskDuration": 2700, // 45 minutes in seconds
             "isCompleted": true,
-            "image": "task2_image.jpg"
+            "image": "bus.jpg"
           }
         ]
       },
@@ -58,7 +58,7 @@
             "text": "Task 3",
             "taskDuration": 1800, // 30 minutes in seconds
             "isCompleted": false,
-            "image": "task3_image.jpg"
+            "image": "dinner.jpg"
           },
           {
             "id": 4,
@@ -67,7 +67,7 @@
             "text": "Task 4",
             "taskDuration": 5400, // 1.5 hours in seconds
             "isCompleted": false,
-            "image": "task4_image.jpg"
+            "image": "gym.jpg"
           }
         ]
       },
@@ -83,7 +83,7 @@
             "text": "Task 5",
             "taskDuration": 2700, // 45 minutes in seconds
             "isCompleted": true,
-            "image": "task5_image.jpg"
+            "image": "park.jpg"
           }
         ]
       },
