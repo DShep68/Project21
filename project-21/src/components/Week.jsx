@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import MyContext from '../index';
+import { UserContext } from '../index';
 import { Link } from "react-router-dom";
 
 export default function Week() {
-    const { userData, setUserData } = useContext(MyContext);
+    const { userData, setUserData } = useContext(UserContext);
     let weekdays = userData.daysOfWeek
 
     function weekDay() {

@@ -3,15 +3,15 @@ import { createRoot } from 'react-dom/client';
 import Pages from './pages/Pages';
 import testUser from './data/testUser.json';
 
-export default MyContext = React.createContext();
+export const UserContext = React.createContext();
 
-export function MyProvider({ children }) {
+export function UserProvider({ children }) {
     let [userData, setUserData] = useState(testUser.user)
   
     return (
-      <MyContext.Provider value={{userData, setUserData}}>
+      <UserContext.Provider value={{userData, setUserData}}>
         {children} {/* Render the wrapped content */}
-      </MyContext.Provider>
+      </UserContext.Provider>
     )
   }
 
@@ -21,10 +21,10 @@ const App = () => {
     
     return (
         <React.StrictMode>
-            <MyProvider>
+            <UserProvider>
                 {/* <Weekday user={userData} setUser={setUserData}/> */}
                 <Pages />
-            </MyProvider>
+            </UserProvider>
         </React.StrictMode>
     )
 }

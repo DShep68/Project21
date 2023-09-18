@@ -12,6 +12,7 @@ import Home from "./Home";
 import About from "./About";
 // import ContactUs component
 import ContactUs from "./ContactUs";
+import ChildView from "./ChildView";
   
 function Pages() {
     return (
@@ -21,6 +22,7 @@ function Pages() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/childview" element={<ChildView />} />
           </Routes>
         </Router>
       </>

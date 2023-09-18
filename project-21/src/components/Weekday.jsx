@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import MyContext from '../index';
+import { Link } from "react-router-dom";
+import { UserContext } from '../index';
 import { produce } from 'immer';
 
 
 
 export default function Weekday({weekday}) {
-    const { userData, setUserData } = useContext(MyContext);
+    const { userData, setUserData } = useContext(UserContext);
 
     let tasks = userData.daysOfWeek[weekday].tasks
     let fakeTask = {
@@ -51,6 +52,11 @@ export default function Weekday({weekday}) {
               } else {
                 draft.daysOfWeek[weekday].tasksCompleted = draft.daysOfWeek[weekday].tasksCompleted - 1
               }
+              if (draft.daysOfWeek[weekday].tasksCompleted === draft.daysOfWeek[weekday].tasksToDo) {
+                draft.daysOfWeek[weekday].isCompleted = true
+              } else {
+                draft.daysOfWeek[weekday].isCompleted = false
+              }
             }
           })
         })
@@ -88,7 +94,7 @@ export default function Weekday({weekday}) {
 
     return (
         <>
-            <div className="Weekday-title">{weekday} {userData.daysOfWeek[weekday].tasksCompleted} / {userData.daysOfWeek[weekday].tasksToDo}</div>
+            <div className="Weekday-title">{weekday} {userData.daysOfWeek[weekday].tasksCompleted} / {userData.daysOfWeek[weekday].tasksToDo} <Link className="Link" to="/childview" state={{dayInfo: {day: weekday, info: [userData.daysOfWeek[weekday]]}}}>ChildView</Link></div>
             <div className="WeekdayTasks">
                 <div className="WeekdayTasks-addTask" onClick={() => addTask(fakeRoutine)}>
                     Add a task

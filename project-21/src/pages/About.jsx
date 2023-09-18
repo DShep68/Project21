@@ -15,8 +15,6 @@ const About = () => {
     <div>
       <h1>Day Page - {weekday}</h1>
       <Link className="Link" to="/">Home</Link>
-      <Link className="Link" to="/about">About</Link>
-      <Link className="Link" to="/contactus">Contact Us</Link>
       <Weekday weekday={weekday}/>
     </div>
   )
