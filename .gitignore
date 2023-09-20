@@ -2,10 +2,11 @@
 
 # dependencies
 node_modules
+/project-21/.parcel-cache/
 /.pnp
 .pnp.js
-.parcel-cache
-dist
+/project-21/dist/
+/project-21/node_modules/
 package-lock.json
 
 # testing
