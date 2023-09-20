@@ -7,7 +7,7 @@ node_modules
 .pnp.js
 /project-21/dist/
 /project-21/node_modules/
-package-lock.json
+/project-21/package-lock.json
 
 # testing
 /coverage
