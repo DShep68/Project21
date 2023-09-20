@@ -94,7 +94,7 @@ export default function Weekday({weekday}) {
 
     return (
         <>
-            <div className="Weekday-title">{weekday} {userData.daysOfWeek[weekday].tasksCompleted} / {userData.daysOfWeek[weekday].tasksToDo} <Link className="Link" to="/childview" state={{dayInfo: {day: weekday, info: [userData.daysOfWeek[weekday]]}}}>ChildView</Link></div>
+            <div className="Weekday-title">{weekday} {userData.daysOfWeek[weekday].tasksCompleted} / {userData.daysOfWeek[weekday].tasksToDo} <Link className="Link" to="/childview" state={{dayInfo: {day: weekday, info: {...userData.daysOfWeek[weekday]}}}}>ChildView</Link></div>
             <div className="WeekdayTasks">
                 <div className="WeekdayTasks-addTask" onClick={() => addTask(fakeRoutine)}>
                     Add a task
