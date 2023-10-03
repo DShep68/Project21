@@ -16,7 +16,7 @@ export default function Weekday({weekday}) {
         "text": "This is a Fake Task",
         "taskDuration": 3600, // 1 hour in seconds
         "isCompleted": false,
-        "image": "task1_image.jpg"
+        "image": "gym.jpg"
     }
     let fakeRoutine = [
         {
@@ -26,7 +26,7 @@ export default function Weekday({weekday}) {
             "text": "This is a Fake Routine Task",
             "taskDuration": 3600, // 1 hour in seconds
             "isCompleted": false,
-            "image": "task1_image.jpg"
+            "image": "bus.jpg"
         },
         {
             "id": Math.floor(Math.random() * 1000) + 10,
@@ -35,7 +35,7 @@ export default function Weekday({weekday}) {
             "text": "This is a Fake Routine Task",
             "taskDuration": 3600, // 1 hour in seconds
             "isCompleted": false,
-            "image": "task1_image.jpg"
+            "image": "brushing.jpg"
         }
     ]
 
