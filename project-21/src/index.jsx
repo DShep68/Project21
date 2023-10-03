@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { createRoot } from 'react-dom/client';
 import Pages from './pages/Pages';
+import SettingsForm from './components/SettingsForm';
 import testUser from './data/testUser.json';
 
 export const UserContext = React.createContext();
@@ -23,7 +24,8 @@ const App = () => {
         <React.StrictMode>
             <UserProvider>
                 {/* <Weekday user={userData} setUser={setUserData}/> */}
-                <Pages />
+                {/* <Pages /> */}
+                <SettingsForm />
             </UserProvider>
         </React.StrictMode>
     )
