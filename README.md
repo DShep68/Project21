@@ -10,5 +10,5 @@ Daily task scheduling
 Technical Details
 
 - Built with React
-- Utilizes various React hooks for state management and side effects
+- Utilizes various React hooks for state management, side effects, link routing and context
 
